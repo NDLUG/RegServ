@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+    <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-yrfSO0DBjS56u5M+SjWTyAHujrkiYVtRYh2dtB3yLQtUz3bodOeialO59u5lUCFF" crossorigin="anonymous">
+
+	<title>RegServ - Registration Service</title>
+    </head>
+    <body>
+
+	<div class="container">
+	    <h1 class="mt-5">Registration Service</h1>
+
+	    <hr class="mt-4"> 
+
+	    <p class="lead">To <i>register</i> a new account or to <i>update</i>
+	    the password of an existing account for <a
+	    href="https://chat.ndlug.org">chat.ndlug.org</a>, please enter in
+	    the email address associated with the account in the form below:</p>
+
+	    <form class="card p-2" method="post" action="/email">
+		<div class="input-group">
+		    <input type="text" class="form-control" name="email" placeholder="Email Address">
+		    <div class="input-group-append">
+			<button type="submit" class="btn btn-primary">Send Registration Link</button>
+		    </div>
+		</div>
+	    </form>
+
+	</div>
+
+    </body>
+</html>
