@@ -127,7 +127,6 @@ We were unable to send a registration link to <a href="mailto:{ email }">{ email
             self.application.hashes[hashcode]              = {'email': email, 'timestamp': time.time()}
             self.application.checkpoint()
 
-            # TODO: Pretty HTML
             return self.render('success.html',
                 summary     = 'Registration Link Sent',
                 description = f'''
@@ -208,6 +207,7 @@ There was a problem registering or updating the IRC account:
             del self.application.hashes[hashcode]
             if nickname not in self.application.emails[email]['nicks']:
                 self.application.emails[email]['nicks'].append(nickname)
+            self.application.emails[email]['last_emailed'] = 0
             self.application.checkpoint()
 
             return self.render('success.html',
