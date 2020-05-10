@@ -10,6 +10,8 @@ This is a simple registration service for the [NDLUG] IRC server at
 
 ## Configuration
 
+### Scripts
+
 For `scripts/irc_account.py` to work, you will need to define the following
 environmental variables:
 
@@ -22,6 +24,26 @@ environmental variables:
     **Note**: This assumes the **password** of the operator's IRC account is
     the same as the `/oper` password (which doesn't necessary need to be true,
     but this is a simplification we have made).
+    
+### Mail
+
+To email users a registration link, `RegServ.py` currently uses [msmtp] to send
+email. It assumes a configuration file at `config/msmtprc`.  Here is an example
+configuration that uses [Gmail] as the transport service:
+
+```
+account gmail
+auth on
+tls on
+tls_nocertcheck
+host smtp.gmail.com
+port 587
+from MyRegServ@gmail.com
+user MyRegServ@gmail.com
+password MyPaSsW0Rd
+
+account default : gmail
+```
 
 ## Todo
 
@@ -34,6 +56,7 @@ environmental variables:
 
 - [ ] Fix hard-coded paths (a few).
 
-[NDLUG]:            https://ndlug.org
-[Oragono]:          https://oragono.io
-[The Lounge]:       https://thelounge.chat
+[NDLUG]:            https://ndlug.org/
+[Oragono]:          https://oragono.io/
+[The Lounge]:       https://thelounge.chat/
+[msmtp]:            https://marlam.de/msmtp/
