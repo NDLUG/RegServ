@@ -1,7 +1,7 @@
 # RegServ - Registration Service
 
 This is a simple registration service for the [NDLUG] IRC server at
-[chat.ndlug.org](chat.ndlug.org).
+[chat.ndlug.org](https://chat.ndlug.org).
 
 ## Requirements
 
