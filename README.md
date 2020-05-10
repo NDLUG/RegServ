@@ -50,9 +50,6 @@ Secure Apps](https://support.google.com/accounts/answer/6010255?hl=en).
 
 ## Todo
 
-- [ ] Add default [NDLUG] network to new [The Lounge] accounts.
-    - [ ] Save password to configuration.
-    
 - [ ] Add service scripts to run registration service.
 
 - [ ] Add more documenation.

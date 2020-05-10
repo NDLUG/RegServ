@@ -215,11 +215,30 @@ There was a problem registering or updating the IRC account:
                 description = f'''
 Congratulations! We have updated the account information for { nickname }.
 Feel free to login to <a href="https://chat.ndlug.org">chat.ndlug.org</a>.
+
+</p>
+</div>
+
+<div>
+<p>
+If this is your first time logging into the server, then you will need to make
+the following changes in the initial <b>Network Settings</b> page as shown below:
+</p>
+
+<ol>
+<li>Replace the <b><tt>Nick</tt></b> and <tt>Username</tt> fields with <b>{ nickname }</b>.
+<li>Replace the <b><tt>Password</tt></b> field with the registered <b>password</b>.</li>
+</ol>
+
+<p class="text-center">
+<img class="img-fluid img-thumbnail rounded" src="https://yld.me/raw/VjT.png">
 ''')
         else:
             return self.render('error.html',
-                summary='Invalid Registration Link'
-            )
+                summary     = 'Invalid Registration Link',
+                description = f'''
+The link you used is invalid.  Please return to the registration page to send a new link.
+''')
 
 # Application
 
