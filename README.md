@@ -45,6 +45,9 @@ password MyPaSsW0Rd
 account default : gmail
 ```
 
+**Note**: For [Gmail] mail transport, you must configure it to allow for [Less
+Secure Apps](https://support.google.com/accounts/answer/6010255?hl=en).
+
 ## Todo
 
 - [ ] Add default [NDLUG] network to new [The Lounge] accounts.
@@ -60,3 +63,4 @@ account default : gmail
 [Oragono]:          https://oragono.io/
 [The Lounge]:       https://thelounge.chat/
 [msmtp]:            https://marlam.de/msmtp/
+[gmail]:            https://gmail.com
