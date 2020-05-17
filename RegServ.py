@@ -201,8 +201,16 @@ There was a problem registering or updating the IRC account:
             except tornado.process.CalledProcessError as e:
                 self.application.logger.error(e)
                 return self.render('error.html',
-                    summary='Unable to Register or Update Lounge Account'
-                )
+                    summary     = 'Unable to Register or Update Lounge Account',
+                    description = f'''
+There was a problem registering or updating the Lounge account:
+<pre>
+{ e }
+</pre>
+<pre>
+{ result2 }
+</pre>
+''')
 
             del self.application.hashes[hashcode]
             if nickname not in self.application.emails[email]['nicks']:
