@@ -162,7 +162,7 @@ You must enter in a valid password.  Please try again.
 ''')
 
             # TODO: Check if nickname belongs to email address
-            unclaimed = any(nickname in d['nicks'] for e, d in self.application.emails.items() if email != e)
+            unclaimed = any(nickname.lower() in d['nicks'] for e, d in self.application.emails.items() if email != e)
             if unclaimed:
                 # TODO: delete old hash
                 return self.render('error.html',
@@ -213,8 +213,8 @@ There was a problem registering or updating the Lounge account:
 ''')
 
             del self.application.hashes[hashcode]
-            if nickname not in self.application.emails[email]['nicks']:
-                self.application.emails[email]['nicks'].append(nickname)
+            if nickname.lower() not in self.application.emails[email]['nicks']:
+                self.application.emails[email]['nicks'].append(nickname.lower())
             self.application.emails[email]['last_emailed'] = 0
             self.application.checkpoint()
 
