@@ -32,10 +32,12 @@ import pexpect
 
 # Globals
 
-LOUNGE_COMMAND = 'docker exec --user node -it thelounge thelounge'
-LOUNGE_DATADIR = '/data/thelounge'
 USER_NICKNAME  = os.environ.get('USER_NICKNAME')
 USER_PASSWORD  = os.environ.get('USER_PASSWORD')
+LOUNGE_UID     = os.environ.get('LOUNGE_UID', 'node')
+LOUNGE_GID     = os.environ.get('LOUNGE_GID', 'node')
+LOUNGE_COMMAND = f'docker exec --user {LOUNGE_UID}:{LOUNGE_GID} -it thelounge thelounge'
+LOUNGE_DATADIR = '/data/thelounge'
 
 # Functions
 
