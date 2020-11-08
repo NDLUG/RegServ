@@ -97,7 +97,7 @@ A registration link has already been sent.  Please check your mailbox for the li
             stream    = tornado.process.Subprocess.STREAM
             command   = ['msmtp', '-C' 'configs/msmtprc', email]
             process   = tornado.process.Subprocess(command, stdin=stream)
-            result    = yield tornado.gen.Task(process.stdin.write,
+            result    = yield process.stdin.write(
                 # TODO: Give deadline in human readable format
                 # TODO: Make this parameterizable
                 f'''Subject: [RegServ] Registration Link for chat.ndlug.org
@@ -178,7 +178,7 @@ address.
 
             command = './scripts/irc_account.py'
             process = tornado.process.Subprocess(command, stderr=stream, env=environ)
-            result1 = yield tornado.gen.Task(process.stderr.read_until_close)
+            result1 = yield process.stderr.read_until_close()
 
             try:
                 yield process.wait_for_exit()
@@ -194,7 +194,7 @@ There was a problem registering or updating the IRC account:
 ''')
             command = './scripts/lounge_account.py'
             process = tornado.process.Subprocess(command, stderr=stream, env=environ)
-            result2 = yield tornado.gen.Task(process.stderr.read_until_close)
+            result2 = yield process.stderr.read_until_close()
 
             try:
                 yield process.wait_for_exit()
