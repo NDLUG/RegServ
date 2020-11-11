@@ -34,8 +34,10 @@ import pexpect
 
 USER_NICKNAME  = os.environ.get('USER_NICKNAME')
 USER_PASSWORD  = os.environ.get('USER_PASSWORD')
-LOUNGE_UID     = os.environ.get('LOUNGE_UID', 'node')
-LOUNGE_GID     = os.environ.get('LOUNGE_GID', 'node')
+
+LOUNGE_GID     = os.environ.get('LOUNGE_GID')
+LOUNGE_UID     = os.environ.get('LOUNGE_UID')
+
 LOUNGE_COMMAND = f'docker exec --user {LOUNGE_UID}:{LOUNGE_GID} -it thelounge thelounge'
 LOUNGE_DATADIR = '/data/thelounge'
 
@@ -55,6 +57,7 @@ def register_account(nickname, password):
         process.wait()
 
     if not os.path.exists(json_path):
+        logging.warning(f'{nickname}.json does not exist!')
         sys.exit(1)
 
     # Update password
