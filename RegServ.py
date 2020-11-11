@@ -208,7 +208,7 @@ There was a problem registering or updating the Lounge account:
 { e }
 </pre>
 <pre>
-{ result2 }
+{ result2.decode() }
 </pre>
 ''')
 
