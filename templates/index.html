@@ -12,23 +12,121 @@
 
 	<div class="container">
 	    <h1 class="mt-5"><a href="/">Registration Service</a></h1>
-
 	    <hr class="mt-4"> 
 
-	    <p class="lead">To <i>register</i> a new account or to <i>update</i>
-	    the password of an existing account for <a
-	    href="https://chat.ndlug.org">chat.ndlug.org</a>, please enter in
-	    the email address associated with the account in the form below:</p>
-
-	    <form class="card p-2" method="post" action="/email">
-		<div class="input-group">
-		    <input type="text" class="form-control" name="email" placeholder="Email Address">
-		    <div class="input-group-append">
-			<button type="submit" class="btn btn-primary">Send Registration Link</button>
-		    </div>
+	    <div class="row">
+		<div class="col">
+		    <p class="lead">Welcome to the <a
+		       href="https://ndlug.org">NDLUG</a> IRC Registration
+		   Service.  You may use the online registration system
+		   below to register an account or you may use the information
+		   below to directly connect to our service.</p>
 		</div>
-	    </form>
+	    </div>
 
+	    <div class="row">
+		
+		<div class="col-md">
+		    <h3>Online Registration</h3>
+
+		    <p class="lead">To <i>register</i> a new account or to <i>update</i>
+		    the password of an existing account for <a
+		    href="https://chat.ndlug.org">chat.ndlug.org</a>, please enter in
+		    the email address associated with the account in the form below:</p>
+
+		    <form class="card p-2" method="post" action="/email">
+			<div class="input-group">
+			    <input type="text" class="form-control" name="email" placeholder="Email Address">
+			    <div class="input-group-append">
+				<button type="submit" class="btn btn-primary">Send Registration Link</button>
+			    </div>
+			</div>
+		    </form>
+		    
+		    <br>
+
+		    <p class="lead">This process will both <i>register</i> or <i>update</i> your IRC
+		    account and create a <a href="https://thelounge.chat/">Lounge</a> account at 
+		    <a href="https://chat.ndlug.org">chat.ndlug.org</a> that you can use 
+		    as a web-based IRC client.</p>
+
+		</div>
+
+		<div class="col-md">
+		    <h3>IRC Service</h3>
+
+		    <p class="lead">
+		    To <i>connect</i> directly to our IRC service using your favorite IRC
+		    client, please use the following information:</p>
+
+		    <table class="table table-bordered table-striped">
+			<thead>
+			    <th>Host</th>
+			    <th>Port</th>
+			</thead>
+			<tbody>
+			    <tr>
+				<td><tt>chat.ndlug.org</tt></td>
+				<td><tt>6697</tt></td>
+			    </tr>
+			</tbody>
+		    </table>
+
+		    <p class="lead">Once connected, you can contact the
+		    <tt>Nick Service</tt> to register your account:
+		    <tt>/msg NickServ help</tt>.</p>
+
+		</div>
+
+	    </div>
+
+	    <div class="row">
+
+		<div class="col-md">
+		    <h3>IRC Clients</h3>
+
+		    <p class="lead">If you wish to use your own IRC client,
+		       here is a list of IRC clients <a
+		       	   href="https://ndlug.org">NDLUG</a> members enjoy
+		       using:</p>
+
+		    <table class="table table-bordered table-striped">
+			<thead>
+			    <th>Name</th>
+			    <th>Platforms</th>
+			    <th>Notes</th>
+			</thead>
+			<tbody>
+			    <tr>
+				<td><a href="https://thelounge.chat/">The Lounge</a></td>
+				<td>Web</td>
+				<td>A hosted version is provided at <a href="https://chat.ndlug.org">chat.ndlug.org</a></td>
+			    </tr>
+			    <tr>
+				<td><a href="https://weechat.org/">WeeChat</a></td>
+				<td>Linux, macOS, Windows</td>
+				<td>Terminal-based but has multiple front-ends</td>
+			    </tr>
+			    <tr>
+				<td><a href="https://www.codeux.com/textual/">Textual</a></td>
+				<td>macOS</td>
+				<td>Free if you compile yourself</td>
+			    </tr>
+			    <tr>
+				<td><a href="https://hexchat.github.io/">HexChat</a></td>
+				<td>Linux, Windows</td>
+				<td></td>
+			    </tr>
+			    <tr>
+				<td><a href="https://www.irccloud.com/">IRC Cloud</a></td>
+				<td>Web</td>
+				<td>Free tier available</td>
+			    </tr>
+			</tbody>
+		    </table>
+		</div>
+
+	    </div>
 	</div>
 
     </body>
