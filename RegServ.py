@@ -154,6 +154,13 @@ The link you used has expired.  Please return to the registration page to send a
             nickname = self.get_argument('nickname', None)
             password = self.get_argument('password', None)
 
+            if ' ' in nickname:
+                return self.render('error.html',
+                    summary     = 'Invalid Registration Nickname',
+                    description = f'''
+You cannot have spaces in your nickname.  Please try again.
+''')
+
             if not password:
                 return self.render('error.html',
                     summary     = 'Invalid Registration Password',
