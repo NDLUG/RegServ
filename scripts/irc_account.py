@@ -100,7 +100,8 @@ async def register_account(nickname, password, host=IRC_HOST, port=IRC_PORT):
     changed    = False
     while not registered and (data := await reader.readline()):
         exists     = exists  or f'Account already exists' in data.decode() \
-                             or f'Successfully registered account' in data.decode()
+                             or f'Successfully registered account' in data.decode() \
+                             or f'Name reserved' in data.decode()
         changed    = changed or f'Password changed' in data.decode()
         registered = exists and changed
 
